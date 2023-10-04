@@ -613,3 +613,4 @@ The "bible" about ZIO is [Zionomicon](https://www.zionomicon.com/), whose main a
 of ZIO. In the first chapter there is a history of ZIO that mentions its birth as an IO Monad for Scala with strong 
 emphasis, from the very beginning, on asynchronous and concurrent programming.
 
+The Scala code of this article can be found [here](https://github.com/avargasv/ZIO-Dialogue.git).
