@@ -66,10 +66,14 @@ the state of the world, either using it as input or modifying it (or both things
 linked, so much so that we could even characterize pure functions as those that return values that are not 
 state-dependent.
 
-Now, reversing our second, operative, definition of a pure function, we can also say that a side effect is anything 
+Reversing our second, operative, definition of a pure function, we can also say that a side effect is anything 
 that can break the "purity" of a function, anything that can cause a programming function to change behavior from one 
 call to another with the same arguments. In other terms, anything that could unduly affect the value returned by a 
 function or any consequence of its execution observable in the "state of the world".
+
+It is also possible to describe the behavior of an impure function as "non-deterministic", because it can change
+from one call to another unpredictably (in the sense that we cannot predict such behavior from the code of the 
+function itself).
 
 ## 1.2 Advantages of pure functions. The substitution rule and equational reasoning. Composition of pure functions.
 
@@ -163,6 +167,12 @@ lower level of abstraction, by "decomposing" some functions into the functions t
 >Scala being a strong statically typed programming language, the type-compatibility of the output of a function 
 with the input of the function it feeds to, is verified at compilation time. Here we will take that compatibility 
 for granted, without delving at all in the intricacies of the mighty Scala type system.
+
+Building programs by composing functions means that our programs are, in the end, just "big functions" composed by
+many smaller ones. Of course, we don't want those big functions to be non-deterministic. As **the composition of 
+two functions is impure if only one of them is impure**, and so the presence of only one impure function among 
+those that compose a program would make the entire program impure, we are restricted to using pure functions 
+when applying this way of building programs.
 
 ## 1.3 The I/O monad.
 
