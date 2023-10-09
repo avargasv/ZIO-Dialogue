@@ -36,9 +36,17 @@ possibility of "changing behavior" from one call to the function to a subsequent
 
 In other words, a pure function in programming implements the definition of a function in mathematics. This notion 
 is expressed, in more operative terms, saying that pure functions in programming are those that are free of 
-"side effects". 
+"side effects".
 
-In programming not all functions are pure. Let's give some examples of impure functions (or functions with side 
+>Strictly speaking, to abide to the mathematical definition, functions in programming must also be complete, i.e. 
+they must be defined (return a value) for all the elements of their domains. Scala has the (otherwise very 
+useful) notion of a partial function, in addition, of course, to including function that are essentially not complete 
+like, for example, integer division, which is undefined when the denominator equals zero. Scala partial functions
+are outside the scope of this article. Regarding "standard" Scala functions of type `X => A` which are undefined for 
+some elements of `A`, they can be redefined as total functions by simply changing their type to `X => Option[A]` 
+and returning `None` for those elements (and the same value as before, wrapped by `Some`, for the others).
+
+In programming not all functions are pure. Let's give some examples of impure functions (as functions with side 
 effects) in Scala:
 ```scala
   val rnd = new scala.util.Random
@@ -169,10 +177,12 @@ with the input of the function it feeds to, is verified at compilation time. Her
 for granted, without delving at all in the intricacies of the mighty Scala type system.
 
 Building programs by composing functions means that our programs are, in the end, just "big functions" composed by
-many smaller ones. Of course, we don't want those big functions to be non-deterministic. As **the composition of 
-two functions is impure if only one of them is impure**, and so the presence of only one impure function among 
-those that compose a program would make the entire program impure, we are restricted to using pure functions 
-when applying this way of building programs.
+a certain number of smaller ones. Of course, we don't want those big functions to be non-deterministic. So, as
+**the composition of any number of functions is impure if only one of them is impure**, and as impurity implies
+non-determinism, we must use pure functions when applying this way of building programs.
+
+Summarizing what we have argued in this section: if we want to maintain the advantages of equational reasoning and
+of program building by composition, we are restricted to program using pure functions. 
 
 ## 1.3 The I/O monad.
 
