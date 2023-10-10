@@ -38,16 +38,15 @@ In other words, a pure function in programming implements the definition of a fu
 is expressed, in more operative terms, saying that pure functions in programming are those that are free of 
 "side effects".
 
->Strictly speaking, to abide to the mathematical definition, functions in programming must also be complete, i.e. 
+>Strictly speaking, to abide to the mathematical definition, functions in programming must also be total, i.e. 
 they must be defined (return a value) for all the elements of their domains. Scala has the (otherwise very 
-useful) notion of a partial function, in addition, of course, to including function that are essentially not complete 
-like, for example, integer division, which is undefined when the denominator equals zero. Scala partial functions
-are outside the scope of this article. Regarding "standard" Scala functions of type `X => A` which are undefined for 
-some elements of `A`, they can be redefined as total functions by simply changing their type to `X => Option[A]` 
+useful) notion of a partial function, in addition to including function that are essentially not total like, 
+for example, integer division, which is undefined when the denominator equals zero. Scala partial functions
+are outside the scope of this article. Regarding "standard" Scala functions of type `X => A` which are undefined 
+for some elements of `A`, they can be redefined as total functions by simply changing their type to `X => Option[A]` 
 and returning `None` for those elements (and the same value as before, wrapped by `Some`, for the others).
 
-In programming not all functions are pure. Let's give some examples of impure functions (as functions with side 
-effects) in Scala:
+In programming not all functions are pure. Let's give some examples of impure functions in Scala:
 ```scala
   val rnd = new scala.util.Random
   
