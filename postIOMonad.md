@@ -45,7 +45,7 @@ total, such as arithmetic division which is not defined when the denominator is 
 functions are outside the scope of this article. Regarding "standard" Scala functions of type `X => A` which 
 are undefined for some elements of `X`, they can be redefined as total functions by simply changing their type 
 to `X => Option[A]` and returning `None` for those elements of `X` (and the same return value as before, wrapped 
-by `Some`, for the others).
+by `Some`, for the rest).
 
 In programming not all functions are pure. Let's give some examples of impure functions in Scala:
 ```scala
