@@ -40,11 +40,12 @@ is expressed, in more operative terms, saying that pure functions in programming
 
 >Strictly speaking, to abide to the mathematical definition, functions in programming must also be total, i.e. 
 they must be defined (return a value) for all the elements of their domains. Scala has the (otherwise very 
-useful) notion of a partial function, in addition to including function that are essentially not total like, 
-for example, integer division, which is undefined when the denominator equals zero. Scala partial functions
-are outside the scope of this article. Regarding "standard" Scala functions of type `X => A` which are undefined 
-for some elements of `A`, they can be redefined as total functions by simply changing their type to `X => Option[A]` 
-and returning `None` for those elements (and the same value as before, wrapped by `Some`, for the others).
+useful) notion of a partial function, in addition, of course, to including function that are intrinsically not 
+total, such as arithmetic division which is not defined when the denominator is equal to zero. Scala partial 
+functions are outside the scope of this article. Regarding "standard" Scala functions of type `X => A` which 
+are undefined for some elements of `X`, they can be redefined as total functions by simply changing their type 
+to `X => Option[A]` and returning `None` for those elements of `X` (and the same return value as before, wrapped 
+by `Some`, for the others).
 
 In programming not all functions are pure. Let's give some examples of impure functions in Scala:
 ```scala
