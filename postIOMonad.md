@@ -260,7 +260,7 @@ value returned by the first ZIO.
 The `map` and `flatMap` operators together form the basis of the Scala `for` comprehension, widely used as an 
 intuitively clear representation of the sequential composition of functional effects. Said in other terms, those 
 operators allow ZIO functional effects (in particular `zio.Console` effects) to behave as a "monad" (actually
-`withFilter` is also needed by a monad, but we can ignore it in this introduction).
+`withFilter` is also needed by a Scala for comprehension, but we can ignore it in this introduction).
 
 >The use of for comprehensions is intuitively clear and their practical implications are well known to Scala
 programmers. The concept of monad has its roots in an abstract theory that gives a foundation to many important 
@@ -612,7 +612,7 @@ Finally, we provide some references that may be useful to delve deeper into the 
 
 The `Dialogue` example was taken from a talk by 
 [Andres Loeh](https://www.youtube.com/watch?v=tYH5UsahYQU)
-about the IO monad in Haskell, which eloquently explains concepts that are relevant not only to Haskell but to any
+about the IO monad in Haskell, which clearly explains concepts that are relevant not only to Haskell but to any
 functional programming language.
 
 In Haskell you cannot write impure functions: an IO monad exists by default, and there is no way to escape from it. 
