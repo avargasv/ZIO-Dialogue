@@ -213,7 +213,7 @@ This suspension of the side effects, together with the machinery needed to compo
 handful of IO monads available for Scala. One of them, ZIO, our preferred one, was chosen in this article to 
 illustrate the advantages of separating the abstract definition of a side-effecting program from its implementation.
 
-Actually, ZIO is a lot more than a IO monad for Scala, as a brief look at Section 6, or even better a look at the 
+Actually, ZIO is a lot more than a IO monad for Scala, as a brief look at Section 2, or even better a look at the 
 article mentioned at the beginning of this section, should make clear.
 
 ## 2. ZIO as an IO monad for console input/output operations.
@@ -580,7 +580,7 @@ need to sing the praises of compositionality using diagrams. As software develop
 ***solving a programming problem by first dividing it into simpler parts and then putting together the solutions of 
 the parts as a solution of the whole***, 
 
-is the "divide-and-conquer" strategy that allows us to build correct software no matter the degree of complexity 
+is this "divide-and-conquer" strategy that allows us to build correct software no matter the degree of complexity 
 involved. The crux here is that this strategy is applied in the simplest and most "natural" way conceivable by the 
 composition of pure functions (there are other ways, of course, because software building, even if not using 
 a pure functional approach, simply cannot do without this strategy).
