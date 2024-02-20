@@ -580,7 +580,7 @@ need to sing the praises of compositionality using diagrams. As software develop
 ***solving a programming problem by first dividing it into simpler parts and then putting together the solutions of 
 the parts as a solution of the whole***, 
 
-is this "divide-and-conquer" strategy that allows us to build correct software no matter the degree of complexity 
+is the "divide-and-conquer" strategy that allows us to build correct software no matter the degree of complexity 
 involved. The crux here is that this strategy is applied in the simplest and most "natural" way conceivable by the 
 composition of pure functions (there are other ways, of course, because software building, even if not using 
 a pure functional approach, simply cannot do without this strategy).
